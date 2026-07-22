@@ -14,7 +14,17 @@ class AsientoTest {
     void constructorValido(){
         assertFalse(asiento.isOcupado());
         assertEquals("A1",asiento.getCodigo());
+        assertEquals("VIP", asiento.getTipo());
     }
+
+    @Test
+    @DisplayName("Constructor crea asiento inválido")
+    void constructorInvalidoException(){
+        assertThrows(IllegalArgumentException.class, 
+            () -> new Asiento("","VIP")
+        );
+    }
+
     //ocupar()
     //prueba que un asiento libre puede ocuparse correctamente(caso normal)
     @Test
@@ -42,5 +52,4 @@ class AsientoTest {
     assertEquals("El asiento C1 ya está ocupado", exception.getMessage());
     }
 
-    // TODO: Traducir los demás casos de su tabla a métodos @Test.
 }
