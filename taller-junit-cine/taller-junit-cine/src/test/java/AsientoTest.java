@@ -16,6 +16,7 @@ class AsientoTest {
         assertEquals("A1",asiento.getCodigo());
     }
     //ocupar()
+    //prueba que un asiento libre puede ocuparse correctamente(caso normal)
     @Test
     @DisplayName("Asiento libre puede ocuparse correctamente")
     void ocuparAsientoLibre() {
@@ -27,6 +28,7 @@ class AsientoTest {
 
     assertTrue(asientoLibre.isOcupado());
     }
+    // prueba que un asiento ocupado no puede ocuparse nuevamente y lanza la excepción esperada(Caso limite)
     @Test
     @DisplayName("No se puede ocupar un asiento ya ocupado")
     void ocuparAsientoYaOcupado() {
