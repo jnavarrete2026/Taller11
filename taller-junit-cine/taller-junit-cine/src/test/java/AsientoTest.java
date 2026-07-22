@@ -15,6 +15,18 @@ class AsientoTest {
         assertFalse(asiento.isOcupado());
         assertEquals("A1",asiento.getCodigo());
     }
+    //ocupar()
+    @Test
+    @DisplayName("Asiento libre puede ocuparse correctamente")
+    void ocuparAsientoLibre() {
+    Asiento asientoLibre = new Asiento("B1", "VIP");
+
+    assertFalse(asientoLibre.isOcupado());
+
+    asientoLibre.ocupar();
+
+    assertTrue(asientoLibre.isOcupado());
+    }
 
     // TODO: Traducir los demás casos de su tabla a métodos @Test.
 }
