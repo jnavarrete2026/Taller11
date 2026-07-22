@@ -27,6 +27,18 @@ class AsientoTest {
 
     assertTrue(asientoLibre.isOcupado());
     }
+    @Test
+    @DisplayName("No se puede ocupar un asiento ya ocupado")
+    void ocuparAsientoYaOcupado() {
+    Asiento asiento = new Asiento("C1", "VIP");
+    asiento.ocupar();
+    IllegalStateException exception = assertThrows(
+        IllegalStateException.class,
+        () -> asiento.ocupar()
+    );
+
+    assertEquals("El asiento C1 ya está ocupado", exception.getMessage());
+    }
 
     // TODO: Traducir los demás casos de su tabla a métodos @Test.
 }
