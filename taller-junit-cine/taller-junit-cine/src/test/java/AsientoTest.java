@@ -57,4 +57,11 @@ class AsientoTest {
     assertEquals("El asiento C1 ya está ocupado", exception.getMessage());
     }
 
+    //Calcular precio base
+    @Test
+    @DisplayName("CP-04: Precio base de un asiento VIP")
+    void calcularPrecioBaseVIP() {
+        assertEquals(8.5, asiento.calcularPrecioBase());
+    }
+
 }
